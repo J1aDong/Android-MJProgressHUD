@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_mjprogresshuddefault"
+        android:gravity="center"
+        android:minWidth="@dimen/size_minwidth_mjprogresshuddefault"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_mjprogresshuddefault">
+
+        <ImageView
+            android:id="@+id/ivBigLoading"
+            android:layout_width="@dimen/size_image_bigloading"
+            android:layout_height="@dimen/size_image_bigloading"
+            android:scaleType="fitCenter"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/ivSmallLoading"
+            android:layout_width="@dimen/size_image_smallloading"
+            android:layout_height="@dimen/size_image_smallloading"
+            android:scaleType="centerInside"
+            android:visibility="gone" />
+
+        <com.j1adong.android_mjprogresshud.view.MJCircleProgressBar
+            android:id="@+id/circleProgressBar"
+            android:layout_width="@dimen/size_image_smallloading"
+            android:layout_height="@dimen/size_image_smallloading"
+            app:mjprogress_roundColor="@color/roundColor_mjprogresshuddefault"
+            app:mjprogress_roundProgressColor="@color/roundProgressColor_mjprogresshuddefault"
+            app:mjprogress_roundWidth="5dp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvMsg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margintop_mjprogresshuddefault_msg"
+            android:gravity="center"
+            android:textColor="@color/textColor_mjprogresshuddefault_msg"
+            android:textSize="@dimen/textSize_mjprogresshuddefault_msg"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</LinearLayout>

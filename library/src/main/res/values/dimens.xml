@@ -1,0 +1,17 @@
+<resources>
+
+    <!--padding-->
+    <dimen name="padding_mjprogresshuddefault">15dp</dimen>
+    <!--窗口最小宽度-->
+    <dimen name="size_minwidth_mjprogresshuddefault">120dp</dimen>
+    <!--图片宽高-->
+    <dimen name="size_image_bigloading">80dp</dimen>
+    <!--图片宽高-->
+    <dimen name="size_image_smallloading">60dp</dimen>
+    <!--圆角-->
+    <dimen name="radius_mjprogresshuddefault">25px</dimen>
+    <!--提示的文字大小-->
+    <dimen name="textSize_mjprogresshuddefault_msg">15sp</dimen>
+    <dimen name="margintop_mjprogresshuddefault_msg">10dp</dimen>
+
+</resources>
