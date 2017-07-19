@@ -8,7 +8,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.j1adong.android_mjprogresshud.R;
-import com.wonderkiln.blurkit.BlurLayout;
 
 /**
  * Created by Sai on 15/8/15. 默认的SVProgress效果
@@ -94,14 +93,6 @@ public class MJProgressDefaultView extends LinearLayout {
         // 开启旋转动画
         mSmallProgress.stop();
         mSmallProgress.start();
-    }
-
-    public void enableBlur(boolean enable) {
-        if (enable) {
-            llRoot.setBackground(getResources().getDrawable(R.drawable.bg_mjprogresshuddefault));
-        } else {
-            llRoot.setBackground(getResources().getDrawable(R.drawable.bg_mjprogresshudwhite));
-        }
     }
 
     public void showInfoWithStatus(String string) {

@@ -111,10 +111,6 @@ public class MJProgressHUD {
 
     }
 
-    public void enableBlur(boolean enable) {
-        mSharedView.enableBlur(enable);
-    }
-
     public void show() {
         if (isShowing()) dismissImmediately();
         setMaskType(SVProgressHUDMaskType.Black);

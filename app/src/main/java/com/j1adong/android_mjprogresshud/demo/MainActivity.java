@@ -32,12 +32,10 @@ public class MainActivity extends Activity {
     }
 
     public void show(View view) {
-        mjProgressHUD.enableBlur(false);
         mjProgressHUD.show();
     }
 
     public void showWithMaskType(View view) {
-        mjProgressHUD.enableBlur(false);
         mjProgressHUD
                 .showWithMaskType(MJProgressHUD.SVProgressHUDMaskType.None);
         // mjProgressHUD.showWithMaskType(MJProgressHUD.SVProgressHUDMaskType.Black);
@@ -49,23 +47,19 @@ public class MainActivity extends Activity {
     }
 
     public void showWithStatus(View view) {
-        mjProgressHUD.enableBlur(false);
         mjProgressHUD.showWithStatus("loading...");
     }
 
     public void showInfoWithStatus(View view) {
-        mjProgressHUD.enableBlur(false);
         mjProgressHUD
                 .showInfoWithStatus("This is info", MJProgressHUD.SVProgressHUDMaskType.None);
     }
 
     public void showSuccessWithStatus(View view) {
-        mjProgressHUD.enableBlur(false);
         mjProgressHUD.showSuccessWithStatus("Success！");
     }
 
     public void showErrorWithStatus(View view) {
-        mjProgressHUD.enableBlur(false);
         mjProgressHUD
                 .showErrorWithStatus("Error", MJProgressHUD.SVProgressHUDMaskType.GradientCancel);
     }
@@ -89,7 +83,6 @@ public class MainActivity extends Activity {
                     }
                     break;
                 case 1:
-                    mjProgressHUD.enableBlur(false);
                     mjProgressHUD.showSuccessWithStatus("Success");
                     break;
                 default:
@@ -100,7 +93,6 @@ public class MainActivity extends Activity {
     };
 
     public void showWithProgress(View view) {
-        mjProgressHUD.enableBlur(false);
         progress = 0;
         mjProgressHUD.getProgressBar().setProgress(progress);// 先重设了进度再显示，避免下次再show会先显示上一次的进度位置所以要先将进度归0
         mjProgressHUD.showWithProgress("progress " + progress
@@ -108,13 +100,7 @@ public class MainActivity extends Activity {
         mHandler.sendEmptyMessageDelayed(0, 500);
     }
 
-    public void showBlur(View view) {
-        mjProgressHUD.enableBlur(true);
-        mjProgressHUD.show();
-    }
-
     public void showLoadingThenSuccess(View view) {
-        mjProgressHUD.enableBlur(false);
         mjProgressHUD.show();
         mHandler.sendEmptyMessageDelayed(1, 2000);
     }

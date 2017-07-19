@@ -124,6 +124,7 @@ public class MJCircleProgressBar extends View {
         // 设置进度是实心还是空心
         paint.setStrokeWidth(roundWidth); // 设置圆环的宽度
         paint.setColor(roundProgressColor); // 设置进度的颜色
+        paint.setStrokeCap(Paint.Cap.ROUND);
         RectF oval = new RectF(centre - radius, centre - radius, centre
                 + radius, centre + radius); // 用于定义的圆弧的形状和大小的界限
 

@@ -19,14 +19,6 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
-        android:onClick="showBlur"
-        android:text="showBlur"
-        android:textAllCaps="false" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
         android:onClick="showWithMaskType"
         android:text="showWithMaskType"
         android:textAllCaps="false" />
