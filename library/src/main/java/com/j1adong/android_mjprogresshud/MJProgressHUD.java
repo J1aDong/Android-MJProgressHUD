@@ -37,7 +37,6 @@ public class MJProgressHUD {
         ClearCancel,     // 不允许遮罩下面控件点击，点击遮罩消失
         BlackCancel,     // 不允许遮罩下面控件点击，背景黑色半透明，点击遮罩消失
         GradientCancel   // 不允许遮罩下面控件点击，背景渐变半透明，点击遮罩消失
-        ;
     }
 
     private final FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(
@@ -53,7 +52,7 @@ public class MJProgressHUD {
     private OnDismissListener onDismissListener;
 
 
-    public MJProgressHUD(Context context){
+    public MJProgressHUD(Context context) {
         this.contextWeak = new WeakReference<>(context);
         gravity = Gravity.CENTER;
         initViews();
@@ -63,7 +62,7 @@ public class MJProgressHUD {
 
     protected void initViews() {
         Context context = contextWeak.get();
-        if(context == null) return;
+        if (context == null) return;
 
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         decorView = (ViewGroup) ((Activity) context).getWindow().getDecorView().findViewById(android.R.id.content);
@@ -72,9 +71,10 @@ public class MJProgressHUD {
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT
         ));
     }
-    protected void initDefaultView(){
+
+    protected void initDefaultView() {
         Context context = contextWeak.get();
-        if(context == null) return;
+        if (context == null) return;
 
         mSharedView = new MJProgressDefaultView(context);
         params.gravity = gravity;
@@ -82,9 +82,9 @@ public class MJProgressHUD {
     }
 
     protected void initAnimation() {
-        if(inAnim == null)
+        if (inAnim == null)
             inAnim = getInAnimation();
-        if(outAnim == null)
+        if (outAnim == null)
             outAnim = getOutAnimation();
     }
 
@@ -94,7 +94,8 @@ public class MJProgressHUD {
     private void onAttached() {
         isShowing = true;
         decorView.addView(rootView);
-        if(mSharedView.getParent()!=null)((ViewGroup)mSharedView.getParent()).removeView(mSharedView);
+        if (mSharedView.getParent() != null)
+            ((ViewGroup) mSharedView.getParent()).removeView(mSharedView);
         rootView.addView(mSharedView);
     }
 
@@ -110,15 +111,19 @@ public class MJProgressHUD {
 
     }
 
+    public void enableBlur(boolean enable) {
+        mSharedView.enableBlur(enable);
+    }
+
     public void show() {
-        if(isShowing()) dismissImmediately();
+        if (isShowing()) dismissImmediately();
         setMaskType(SVProgressHUDMaskType.Black);
         mSharedView.show();
         svShow();
     }
 
     public void showWithMaskType(SVProgressHUDMaskType maskType) {
-        if(isShowing()) dismissImmediately();
+        if (isShowing()) dismissImmediately();
         //判断maskType
         setMaskType(maskType);
         mSharedView.show();
@@ -126,21 +131,21 @@ public class MJProgressHUD {
     }
 
     public void showWithStatus(String string) {
-        if(isShowing()) dismissImmediately();
+        if (isShowing()) dismissImmediately();
         setMaskType(SVProgressHUDMaskType.Black);
         mSharedView.showWithStatus(string);
         svShow();
     }
 
     public void showWithStatus(String string, SVProgressHUDMaskType maskType) {
-        if(isShowing()) dismissImmediately();
+        if (isShowing()) dismissImmediately();
         setMaskType(maskType);
         mSharedView.showWithStatus(string);
         svShow();
     }
 
     public void showInfoWithStatus(String string) {
-        if(isShowing()) dismissImmediately();
+        if (isShowing()) dismissImmediately();
         setMaskType(SVProgressHUDMaskType.Black);
         mSharedView.showInfoWithStatus(string);
         svShow();
@@ -148,7 +153,7 @@ public class MJProgressHUD {
     }
 
     public void showInfoWithStatus(String string, SVProgressHUDMaskType maskType) {
-        if(isShowing()) dismissImmediately();
+        if (isShowing()) dismissImmediately();
         setMaskType(maskType);
         mSharedView.showInfoWithStatus(string);
         svShow();
@@ -156,7 +161,7 @@ public class MJProgressHUD {
     }
 
     public void showSuccessWithStatus(String string) {
-        if(isShowing()) dismissImmediately();
+        if (isShowing()) dismissImmediately();
         setMaskType(SVProgressHUDMaskType.Black);
         mSharedView.showSuccessWithStatus(string);
         svShow();
@@ -164,7 +169,7 @@ public class MJProgressHUD {
     }
 
     public void showSuccessWithStatus(String string, SVProgressHUDMaskType maskType) {
-        if(isShowing()) dismissImmediately();
+        if (isShowing()) dismissImmediately();
         setMaskType(maskType);
         mSharedView.showSuccessWithStatus(string);
         svShow();
@@ -172,7 +177,7 @@ public class MJProgressHUD {
     }
 
     public void showErrorWithStatus(String string) {
-        if(isShowing()) dismissImmediately();
+        if (isShowing()) dismissImmediately();
         setMaskType(SVProgressHUDMaskType.Black);
         mSharedView.showErrorWithStatus(string);
         svShow();
@@ -180,7 +185,7 @@ public class MJProgressHUD {
     }
 
     public void showErrorWithStatus(String string, SVProgressHUDMaskType maskType) {
-        if(isShowing()) dismissImmediately();
+        if (isShowing()) dismissImmediately();
         setMaskType(maskType);
         mSharedView.showErrorWithStatus(string);
         svShow();
@@ -188,16 +193,17 @@ public class MJProgressHUD {
     }
 
     public void showWithProgress(String string, SVProgressHUDMaskType maskType) {
-        if(isShowing()) dismissImmediately();
+        if (isShowing()) dismissImmediately();
         setMaskType(maskType);
         mSharedView.showWithProgress(string);
         svShow();
     }
 
-    public MJCircleProgressBar getProgressBar(){
+    public MJCircleProgressBar getProgressBar() {
         return mSharedView.getCircleProgressBar();
     }
-    public void setText(String string){
+
+    public void setText(String string) {
         mSharedView.setText(string);
     }
 
@@ -246,7 +252,7 @@ public class MJProgressHUD {
     }
 
     public void dismiss() {
-        if(isDismissing)return;
+        if (isDismissing) return;
         isDismissing = true;
         //消失动画
         outAnim.setAnimationListener(outAnimListener);
@@ -260,7 +266,7 @@ public class MJProgressHUD {
         decorView.removeView(rootView);
         isShowing = false;
         isDismissing = false;
-        if(onDismissListener != null){
+        if (onDismissListener != null) {
             onDismissListener.onDismiss(this);
         }
 
@@ -268,7 +274,7 @@ public class MJProgressHUD {
 
     public Animation getInAnimation() {
         Context context = contextWeak.get();
-        if(context == null) return null;
+        if (context == null) return null;
 
         int res = MJProgressHUDAnimateUtil.getAnimationResource(this.gravity, true);
         return AnimationUtils.loadAnimation(context, res);
@@ -276,7 +282,7 @@ public class MJProgressHUD {
 
     public Animation getOutAnimation() {
         Context context = contextWeak.get();
-        if(context == null) return null;
+        if (context == null) return null;
 
         int res = MJProgressHUDAnimateUtil.getAnimationResource(this.gravity, false);
         return AnimationUtils.loadAnimation(context, res);
@@ -336,11 +342,11 @@ public class MJProgressHUD {
         }
     };
 
-    public void setOnDismissListener(OnDismissListener listener){
+    public void setOnDismissListener(OnDismissListener listener) {
         this.onDismissListener = listener;
     }
 
-    public OnDismissListener getOnDismissListener(){
+    public OnDismissListener getOnDismissListener() {
         return onDismissListener;
     }
 

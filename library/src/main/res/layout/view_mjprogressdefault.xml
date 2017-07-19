@@ -6,47 +6,57 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <LinearLayout
+    <com.wonderkiln.blurkit.BlurLayout
+        android:id="@+id/blur_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_mjprogresshuddefault"
-        android:gravity="center"
-        android:minWidth="@dimen/size_minwidth_mjprogresshuddefault"
-        android:orientation="vertical"
-        android:padding="@dimen/padding_mjprogresshuddefault">
+        app:blurRadius="5"
+        app:downscaleFactor="0.12"
+        app:fps="60">
 
-        <ImageView
-            android:id="@+id/ivBigLoading"
-            android:layout_width="@dimen/size_image_bigloading"
-            android:layout_height="@dimen/size_image_bigloading"
-            android:scaleType="fitCenter"
-            android:visibility="gone" />
-
-        <ImageView
-            android:id="@+id/ivSmallLoading"
-            android:layout_width="@dimen/size_image_smallloading"
-            android:layout_height="@dimen/size_image_smallloading"
-            android:scaleType="centerInside"
-            android:visibility="gone" />
-
-        <com.j1adong.android_mjprogresshud.view.MJCircleProgressBar
-            android:id="@+id/circleProgressBar"
-            android:layout_width="@dimen/size_image_smallloading"
-            android:layout_height="@dimen/size_image_smallloading"
-            app:mjprogress_roundColor="@color/roundColor_mjprogresshuddefault"
-            app:mjprogress_roundProgressColor="@color/roundProgressColor_mjprogresshuddefault"
-            app:mjprogress_roundWidth="5dp"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/tvMsg"
+        <LinearLayout
+            android:id="@+id/ll_root"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margintop_mjprogresshuddefault_msg"
+            android:background="@drawable/bg_mjprogresshudwhite"
             android:gravity="center"
-            android:textColor="@color/textColor_mjprogresshuddefault_msg"
-            android:textSize="@dimen/textSize_mjprogresshuddefault_msg"
-            android:visibility="gone" />
+            android:minWidth="@dimen/size_minwidth_mjprogresshuddefault"
+            android:orientation="vertical"
+            android:padding="@dimen/padding_mjprogresshuddefault">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/ivBigLoading"
+                android:layout_width="@dimen/size_image_bigloading"
+                android:layout_height="@dimen/size_image_bigloading"
+                android:scaleType="fitCenter"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/ivSmallLoading"
+                android:layout_width="@dimen/size_image_smallloading"
+                android:layout_height="@dimen/size_image_smallloading"
+                android:scaleType="centerInside"
+                android:visibility="gone" />
+
+            <com.j1adong.android_mjprogresshud.view.MJCircleProgressBar
+                android:id="@+id/circleProgressBar"
+                android:layout_width="@dimen/size_image_smallloading"
+                android:layout_height="@dimen/size_image_smallloading"
+                android:visibility="gone"
+                app:mjprogress_roundColor="@color/roundColor_mjprogresshuddefault"
+                app:mjprogress_roundProgressColor="@color/roundProgressColor_mjprogresshuddefault"
+                app:mjprogress_roundWidth="5dp" />
+
+            <TextView
+                android:id="@+id/tvMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margintop_mjprogresshuddefault_msg"
+                android:gravity="center"
+                android:textColor="@color/textColor_mjprogresshuddefault_msg"
+                android:textSize="@dimen/textSize_mjprogresshuddefault_msg"
+                android:visibility="gone" />
+
+        </LinearLayout>
+    </com.wonderkiln.blurkit.BlurLayout>
 </LinearLayout>

@@ -150,7 +150,7 @@ public class MJCircleProgressBar extends View {
     /**
      * 设置进度的最大值
      *
-     * @param max
+     * @param max the number max
      */
     public synchronized void setMax(int max) {
         if (max < 0) {
@@ -162,7 +162,7 @@ public class MJCircleProgressBar extends View {
     /**
      * 获取进度.需要同步
      *
-     * @return
+     * @return current progress
      */
     public synchronized int getProgress() {
         return progress;
@@ -172,7 +172,7 @@ public class MJCircleProgressBar extends View {
      * 设置进度，此为线程安全控件，由于考虑多线的问题，需要同步
      * 刷新界面调用postInvalidate()能在非UI线程刷新
      *
-     * @param progress
+     * @param progress set progress
      */
     public synchronized void setProgress(int progress) {
         if (progress < 0) {
